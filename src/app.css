@@ -1,0 +1,48 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f5f3;
+}
+.banner {
+    font-family: Inter, sans-serif;
+}
+ul li > .active {
+    color: black;
+    font-weight: bold;
+}
+ul li > a {
+    color: #777777 ;
+    font-weight: normal;
+    font-size: 16px;
+    position: relative;
+}
+ul li > a:hover {
+    color: black !important;
+}
+ul li > a::after {
+    content: '';
+    background-color: black;
+    position: absolute;
+    left: 0px;
+    top: 29px;
+    height: 2px;
+    transition: .6s;
+}
+ul li > a.active::after {
+    width: 100%;
+}
+ul li {
+    position: relative;
+}
+ul li :not(.last)::before {
+    content: '';
+    background-color: black;
+    position: absolute;
+    right: -29px;
+    top: 0px;
+    height: 100%;
+    width: 1px;
+    transition: .6s;
+}
+.hidden {
+    display: none;
+}
