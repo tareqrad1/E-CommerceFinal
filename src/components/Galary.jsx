@@ -5,9 +5,8 @@ import { useNavigate } from 'react-router-dom'
 
 const Galary = () => {
     const Navigate = useNavigate();
-
   return (
-    <div className="container flex flex-col md:flex-row py-[30px] items-center md:gap-[30px]">
+    <div className="container flex flex-col md:flex-row py-[30px] items-center md:gap-[30px] space-y-2">
         <div className='bg-[#e4e6e7]'>
             <img src={img1} alt="image one" className='cursor-pointer mix-blend-darken' onClick={() => Navigate('shop')} />
         </div>

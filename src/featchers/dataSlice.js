@@ -1,23 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit'
-
+import { FetchApiData } from '../api/fetchData.api'
 const initialState = {
     data: [],
     loading: false,
     error: null
 }
 const dataSlice = createSlice({
-    name:'fetch',
+    name:'products',
     initialState,
     extraReducers: (builder) => {
-        builder.addCase('pending', (state) => {
+        builder.addCase(FetchApiData.pending, (state) => {
             state.loading = true
         }),
-        builder.addCase('fulfilled', (state, action) => {
+        builder.addCase(FetchApiData.fulfilled, (state, action) => {
             state.loading = false,
             state.data = action.payload,
             state.error = null
         }),
-        builder.addCase('rejected', (state, action) => {
+        builder.addCase(FetchApiData.rejected, (state, action) => {
             state.loading = false,
             state.data = [],
             state.error = action.error.message

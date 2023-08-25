@@ -1,4 +1,4 @@
-import NewArrival from "../components/DataComponent/NewArrival"
+import Slider from "../components/DataComponent/newArrival/Slider"
 import FreeShoping from "../components/FreeShoping"
 import Galary from "../components/Galary"
 import { Landing } from "../components/Landing"
@@ -10,7 +10,7 @@ const Home = () => {
       <Landing  />
       <FreeShoping />
       <Galary />
-      <NewArrival />
+      <Slider />
     </>
   )
 }
