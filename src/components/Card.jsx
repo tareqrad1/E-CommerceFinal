@@ -10,7 +10,6 @@ import { useState } from "react";
 
 const NewArrival = ({data}) => {
   const [active, setActive] = useState(false);
-  console.log(active);
   return (
     <div className="container py-[30px]">
       <Card className="card max-w-[24rem] overflow-hidden relative">

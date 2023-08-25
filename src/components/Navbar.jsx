@@ -83,7 +83,7 @@ export function NavbarSimple() {
   return (
     <Navbar className="px-6 py-3 max-w-full lg:px-[60px] md:py-[20px] lg:rounded-none">
       <div className="flex items-center justify-between text-blue-gray-900">
-        <img src={Logo} className="mr-4 cursor-pointer py-1.5" alt="logo" onClick={() => Navigate('home')} />
+        <img src={Logo} className="mr-4 cursor-pointer py-1.5" alt="logo" onClick={() => Navigate('/')} />
         <div className="hidden lg:block ">
           <NavList />
         </div>
