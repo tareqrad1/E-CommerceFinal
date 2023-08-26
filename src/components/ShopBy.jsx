@@ -4,7 +4,7 @@ import { MenuCustomAnimation } from "../utility/Menu"
 
 const ShopBy = () => {
   return (
-    <div className="container flex flex-col lg:flex-row items-start lg:items-center justify-between lg:justify-between  py-[40px] space-y-5 md:space-y-0 ">
+    <div className="container flex flex-col lg:flex-row items-start lg:items-center justify-between lg:justify-between  py-[40px] space-y-5 md:space-y-0 bg-[#f5f5f3] ">
         <div className="flex justify-between items-center space-x-3">
             <i className="fa-solid fa-filter cursor-pointer"></i>
             <h3 className="text-[1rem]">Shop by Category</h3>
@@ -16,7 +16,6 @@ const ShopBy = () => {
         <div className="flex justify-between items-center space-x-3 w-full lg:w-0">
             <div className="flex justify-between items-center space-x-1 cursor-pointer">
                 <MenuCustomAnimation /> 
-                <i className="fa-solid fa-caret-down"></i>
             </div>
             <div className="shopping_cart relative cursor-pointer">
                 <i className="fa-solid fa-cart-shopping"></i>

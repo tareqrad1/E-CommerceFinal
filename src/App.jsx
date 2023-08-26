@@ -9,21 +9,28 @@ import NotFound from "./pages/NotFound"
 import './app.css'
 import Baner from "./components/Baner"
 import Fixed from "./components/Fixed"
+import SiginIn from "./pages/SiginIn"
+import Cart from "./pages/Cart"
 const App = () => {
   return (
     <>
-      {/* <Fixed /> */}
-      <Baner />
-      <NavbarSimple />
       <Routes>
       <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Fixed />}>
-          <Route index element={<Home/> } />
-          <Route path="/home" element={<Home/> } />
-          <Route path='/shop' element={<Shop />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/Journal' element={<Journal />} />
+        <Route path="/" element={ <Baner />}>
+          <Route path="/" element={<NavbarSimple />}>
+            <Route path="/" element={<Fixed />}>
+              <Route index element={<Home/> } />
+              <Route path="/home" element={<Home/> } />
+              <Route path='/shop' element={<Shop />} />
+              <Route path='/about' element={<About titlePage='About' />} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/Journal' element={<Journal titlePage='Journal' />} />
+              <Route path="/cart" element={<Cart />} />
+            </Route>
+          </Route>
+        </Route>
+        <Route path="/" element={<SiginIn />}>
+          <Route path='/signin' element={<SiginIn />} />
         </Route>
       </Routes>
     </>

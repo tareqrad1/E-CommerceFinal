@@ -1,4 +1,6 @@
+import About from "./About";
+
 const Journal = () => {
-  return <div>Journal</div>;
+  return <About titlePage='Journal' />;
 };
 export default Journal;

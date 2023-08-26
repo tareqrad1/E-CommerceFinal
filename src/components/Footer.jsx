@@ -3,8 +3,7 @@ import image from '../image/payment.3e00cc601c9e7fc1e7d3.png'
 import {Link} from 'react-router-dom'
 const Footer = () => {
     const date = new Date().getFullYear();
-     
-  return (
+return (
     <>
         <div className="bg-[#eee] container py-12 md:flex flex-wrap justify-between items-center gap-5 w-full space-y-6 border-b-2 border-[#e5e7eb] ">
             <div className="space-y-2 md:space-y-5  md:text-start">
@@ -17,7 +16,7 @@ const Footer = () => {
                     <i className="fa-brands fa-instagram cursor-pointer p-2 hover:bg-black rounded-full hover:text-white transition-shadow"></i>
                 </div>
             </div>
-            <div className="space-y-2 md:space-y-6  md:text-start">
+            <div className="space-y-2 md:space-y-6 md:text-start">
                 <h3 className="text-2xl font-[600] mb-1">Shop</h3>
                 <ul className="md:space-y-1 cursor-pointer">
                     <li className="hover:ml-1 transition-[1s]">Accesories</li>
@@ -27,7 +26,7 @@ const Footer = () => {
                     <li className="hover:ml-1 transition-[1s]">New Arrivals</li>
                 </ul>
             </div>
-            <div className="md:text-start cursor-pointer">
+            <div className="md:text-start space-y-2 md:space-y-6 cursor-pointer">
             <h3 className="text-2xl font-[600] mb-1">Your account</h3>
                 <ul className="md:space-y-1">
                     <li className="hover:ml-1 transition-[1s]">Profile</li>
@@ -42,7 +41,7 @@ const Footer = () => {
                 <p>A at pellentesque et mattis porta enim elementum.</p>
                 <div className="md:flex justify-between items-center gap-4">
                     <Input variant="static" placeholder="Emails" />
-                    <button className="bg-black px-5 py-2 mt-2 md:mt-0 text-white">subscribe</button>
+                    <button className="bg-black px-5 py-2 mt-2 md:mt-0 text-white hover:bg-white hover:text-black transition-colors">subscribe</button>
                 </div>
                 <img src={image} className="max-w-full w-[200px]" alt="img" />
             </div>
@@ -51,7 +50,7 @@ const Footer = () => {
             <p className="text-[#6d6d6d]"><i className="fa-regular fa-copyright mr-1"></i>Copyright {date} | Orebi shopping | All Rights Reserved | Powered by <Link  className="text-[#545454] text-base" to={'https://github.com/tareqrad1'}>Tareq Radi</Link> </p>
         </div>
     </>
-  )
+)
 }
 
 export default Footer

@@ -6,7 +6,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import Logo from '../image/logo.png'
 function NavList() {
   return (
@@ -81,6 +81,7 @@ export function NavbarSimple() {
   }, []);
  
   return (
+    <>
     <Navbar className="px-6 py-3 max-w-full lg:px-[60px] md:py-[20px] lg:rounded-none">
       <div className="flex items-center justify-between text-blue-gray-900">
         <img src={Logo} className="mr-4 cursor-pointer py-1.5" alt="logo" onClick={() => Navigate('/')} />
@@ -104,5 +105,7 @@ export function NavbarSimple() {
         <NavList />
       </Collapse>
     </Navbar>
+    <Outlet />
+    </>
   );
 }

@@ -46,22 +46,6 @@ ul li :not(.last)::before {
 .hidden {
     display: none;
 }
-
-/* card hover */
-/* .card {
-    position: relative;
-}
-.card::after {
-    content: '';
-    background-color: red;
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-}
-.card::after */
-
 /* swiper */
 .swiper-button-prev {
     color: #777777;
