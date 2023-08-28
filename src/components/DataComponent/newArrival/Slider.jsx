@@ -20,7 +20,7 @@ const Slider = () => {
       dispatch(FetchApiData());
       isMount.current = true;
     }
-  }, [FetchApiData()]);
+  }, [FetchApiData]);
   console.log(value.data);
   return (
     <>

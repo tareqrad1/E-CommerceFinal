@@ -60,3 +60,6 @@ ul li :not(.last)::before {
     font-size: 30px;
 }
 
+ul li :not(.last)::before {
+    height: 0;
+}

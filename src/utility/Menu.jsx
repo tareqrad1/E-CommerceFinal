@@ -17,10 +17,10 @@ export function MenuCustomAnimation() {
         <i className="fa-solid fa-user-tie lg:mr-3 text-xl"></i>
       </MenuHandler>
       <MenuList>
-        <MenuItem><NavLink to='/about'>Login</NavLink></MenuItem>
-        <MenuItem><NavLink to='/contact'>Sign up</NavLink></MenuItem>
-        <MenuItem><NavLink to='/shop'>Profile</NavLink></MenuItem>
-        <MenuItem><NavLink to='/*'>404</NavLink></MenuItem>
+        <NavLink to='/signin'><MenuItem>Login</MenuItem></NavLink>
+        <NavLink to='/contact'><MenuItem>Sign up</MenuItem></NavLink>
+        <NavLink to='/signin'><MenuItem>Profile</MenuItem></NavLink>
+        <NavLink to='/*'><MenuItem>404</MenuItem></NavLink>
       </MenuList>
     </Menu>
   );

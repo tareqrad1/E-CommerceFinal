@@ -1,8 +1,9 @@
 /* eslint-disable react/no-unknown-property */
-
+import { Link } from "react-router-dom"
 import { MenuCustomAnimation } from "../utility/Menu"
-
+import { useSelector } from 'react-redux'
 const ShopBy = () => {
+    const value = useSelector((state) => state.products)
   return (
     <div className="container flex flex-col lg:flex-row items-start lg:items-center justify-between lg:justify-between  py-[40px] space-y-5 md:space-y-0 bg-[#f5f5f3] ">
         <div className="flex justify-between items-center space-x-3">
@@ -17,10 +18,10 @@ const ShopBy = () => {
             <div className="flex justify-between items-center space-x-1 cursor-pointer">
                 <MenuCustomAnimation /> 
             </div>
-            <div className="shopping_cart relative cursor-pointer">
+            <Link to='/cart' className="shopping_cart relative cursor-pointer">
                 <i className="fa-solid fa-cart-shopping"></i>
-                <small className="w-[17px] h-[17px] bg-black rounded-full text-white absolute -bottom-[9px] left-[9px] flex items-center justify-center text-xs select-none">4</small>
-            </div>
+                <small className="w-[17px] h-[17px] bg-black rounded-full text-white absolute -bottom-[9px] left-[9px] flex items-center justify-center text-xs select-none">{value.products.length}</small>
+            </Link>
         </div>
     </div>
   )

@@ -6,14 +6,13 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import { addToCart, removeFromCart } from "../featchers/actionSlice";
-import { useDispatch, useSelector } from 'react-redux'
+import { useState } from "react";
+const Right = ({data}) => {
+  const [active, setActive] = useState(false);
 
-const NewArrival = ({data}) => {
-  const dispatch = useDispatch();
-  const value = useSelector((state) => state.products);
   return (
-    <div className="container py-[30px]">
+    <div className="right w-full md:w-[70%]">
+      <div className="">
       <Card className="card max-w-[24rem] overflow-hidden relative">
         <CardHeader
           floated={false}
@@ -26,7 +25,7 @@ const NewArrival = ({data}) => {
             src={data.image}
             alt={data.name}
           />
-          {data.new && <h1 className="bg-black text-white font-[500] px-4 py-1 w-fit ml-3 absolute left-1 top-4">New</h1>}
+          <h1 className="bg-black text-white font-[500] px-4 py-1 w-fit ml-3 absolute left-1 top-4">New</h1>
         </CardHeader>
         <CardBody>
           <div className="px-1 flex items-center justify-between">
@@ -34,7 +33,7 @@ const NewArrival = ({data}) => {
             {data.name}
           </Typography>
           <Typography variant="small" color="blue-gray">
-            {data.price}<span className="font-bold ml-[1px]">$</span>
+            <span className="font-bold ml-[1px]">$</span>
           </Typography>
           </div>
           <Typography variant="small" color="gray" className="text-start mt-4 ml-[5px] mb-2">
@@ -42,7 +41,7 @@ const NewArrival = ({data}) => {
           </Typography>
           <div>
 
-        {/* {active ? (
+        {active ? (
           <div className="flex items-center flex-col w-full space-y-2">
             <Button
               ripple={false}
@@ -60,44 +59,19 @@ const NewArrival = ({data}) => {
           </div>
         ) : (
           <Button
-          onClick={handleClick}
+          onClick={() =>setActive(true)}
           ripple={false}
           fullWidth={true}
           className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
         >Add to Cart
         </Button>
-        ) } */}
-        
-        {value.products.some((ele) => ele.id === data.id) ? (
-        <div className="flex items-center flex-col w-full space-y-2">
-        <Button
-          ripple={false}
-          fullWidth={true}
-          className="bg-blue-gray-900/10 text-blue-gray-900 text-xs shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-        >View to Cart
-        </Button>
-        <Button
-        onClick={() => dispatch(removeFromCart(data))}
-        ripple={false}
-        fullWidth={true}
-        className="text-xs bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-      >remove from cart
-      </Button>
-      </div>
-        ) : (
-          <Button
-          onClick={() => dispatch(addToCart(data))}
-          ripple={false}
-          fullWidth={true}
-          className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-        >Add to Cart
-        </Button>
-        )}
+        ) }
           </div>
         </CardBody>
       </Card>
+        </div>
     </div>
-  );
-};
+  )
+}
 
-export default NewArrival;
+export default Right

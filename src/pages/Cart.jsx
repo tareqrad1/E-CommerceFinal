@@ -1,6 +1,19 @@
+import { BreadcrumbsWithIcon } from "../components/BreadCrumb"
+import Footer from "../components/Footer"
+import ShopBy from "../components/ShopBy"
+import TableCart from "../components/TableCart"
+
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <>
+      <ShopBy />
+      <div className="container">
+        <h1 className="text-4xl font-semibold mb-3">Cart</h1>
+        <BreadcrumbsWithIcon page='Cart'/>
+        <TableCart />
+      </div>
+      <Footer />
+    </>
   )
 }
 
