@@ -63,3 +63,7 @@ ul li :not(.last)::before {
 ul li :not(.last)::before {
     height: 0;
 }
+/*  */
+button > svg {
+    color: #7d8488;
+}

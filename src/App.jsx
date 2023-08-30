@@ -11,6 +11,8 @@ import Baner from "./components/Baner"
 import Fixed from "./components/Fixed"
 import SiginIn from "./pages/SiginIn"
 import Cart from "./pages/Cart"
+import Products from "./pages/Products"
+import RequireAuth from "./auth/RequireAuth"
 const App = () => {
   return (
     <>
@@ -26,6 +28,7 @@ const App = () => {
               <Route path='/contact' element={<Contact />} />
               <Route path='/Journal' element={<Journal titlePage='Journal' />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/product" element={<RequireAuth><Products /></RequireAuth> } />
             </Route>
           </Route>
         </Route>

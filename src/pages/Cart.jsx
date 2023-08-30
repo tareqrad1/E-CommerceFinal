@@ -1,7 +1,7 @@
 import { BreadcrumbsWithIcon } from "../components/BreadCrumb"
 import Footer from "../components/Footer"
 import ShopBy from "../components/ShopBy"
-import TableCart from "../components/TableCart"
+import TableCart from "../components/TableCartt"
 
 const Cart = () => {
   return (

@@ -7,7 +7,7 @@ export function Landing() {
     const Navigate = useNavigate();
   return (
     <Carousel
-      className=" rounded-xl h-[calc(100vh - 201.6px)]"
+      className="rounded-xl h-[calc(100vh - 201.6px)]"
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
           {new Array(length).fill("").map((_, i) => (
@@ -26,7 +26,6 @@ export function Landing() {
         src={Image1}
         alt="image 1"
         className="h-full w-full bg-black cursor-pointer"
-        onClick={() => Navigate('shop')}
       />
       <img
         src={Image2}
@@ -38,7 +37,6 @@ export function Landing() {
         src={Image3}
         alt="image 3"
         className="h-full w-full bg-black cursor-pointer"
-        onClick={() => Navigate('shop')}
       />
     </Carousel>
   );

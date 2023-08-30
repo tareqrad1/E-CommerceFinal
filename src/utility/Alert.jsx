@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Alert } from "@material-tailwind/react";
  
 function Icon() {
@@ -17,13 +18,13 @@ function Icon() {
   );
 }
  
-export function AlertCustomStyles() {
+export function AlertCustomStyles({name}) {
   return (
     <Alert
       icon={<Icon />}
       className="rounded-none border-l-4 border-[#2ec946] bg-[#2ec946]/10 font-medium text-[#2ec946] md:w-[500px]"
     >
-      Thanks for Sending a Message.
+      Thanks <span className="capitalize">{name}</span> for Sending a Message.
     </Alert>
   );
 }

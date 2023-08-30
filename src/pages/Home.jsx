@@ -3,15 +3,15 @@ import SliderBestsellers from '../components/DataComponent/ourBestsellers/Slider
 import SliderOffers from '../components/DataComponent/offers/Slider'
 import FreeShoping from "../components/FreeShoping"
 import Galary from "../components/Galary"
-import { Landing } from "../components/Landing"
 import ProductClock from "../components/ProductClock"
 import ShopBy from "../components/ShopBy"
 import Footer from "../components/Footer"
+import { Landing } from "../components/Landing"
 const Home = () => {
   return (
     <>
       <ShopBy />
-      <Landing  />
+      <Landing />
       <FreeShoping />
       <Galary />
       <SliderArrival />

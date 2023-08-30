@@ -8,10 +8,17 @@ import {
 } from "@material-tailwind/react";
 import { addToCart, removeFromCart } from "../featchers/actionSlice";
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from "react-router-dom";
+import { viewDetails } from "../featchers/detailsSlice";
 
 const NewArrival = ({data}) => {
   const dispatch = useDispatch();
   const value = useSelector((state) => state.products);
+  const Navigate = useNavigate();
+  function handleDetails () {
+    dispatch(viewDetails(data))
+    Navigate('/product')
+  }
   return (
     <div className="container py-[30px]">
       <Card className="card max-w-[24rem] overflow-hidden relative">
@@ -41,41 +48,17 @@ const NewArrival = ({data}) => {
             {data.color}
           </Typography>
           <div>
-
-        {/* {active ? (
-          <div className="flex items-center flex-col w-full space-y-2">
-            <Button
-              ripple={false}
-              fullWidth={true}
-              className="bg-blue-gray-900/10 text-blue-gray-900 text-xs shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-            >View to Cart
-            </Button>
-
-          <Button
-            ripple={false}
-            fullWidth={true}
-            className="text-xs bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-          >remove from cart
-          </Button>
-          </div>
-        ) : (
-          <Button
-          onClick={handleClick}
-          ripple={false}
-          fullWidth={true}
-          className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-        >Add to Cart
-        </Button>
-        ) } */}
         
         {value.products.some((ele) => ele.id === data.id) ? (
         <div className="flex items-center flex-col w-full space-y-2">
-        <Button
-          ripple={false}
-          fullWidth={true}
-          className="bg-blue-gray-900/10 text-blue-gray-900 text-xs shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-        >View to Cart
-        </Button>
+          <Button
+                  onClick={handleDetails}
+                  ripple={false}
+                  fullWidth={true}
+                  className="bg-blue-gray-900/10 text-blue-gray-900 text-xs shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+                >
+                  View Details
+          </Button>
         <Button
         onClick={() => dispatch(removeFromCart(data))}
         ripple={false}

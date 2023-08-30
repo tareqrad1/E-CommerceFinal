@@ -47,7 +47,7 @@ return (
             </div>
         </div>
         <div className="container bg-[#eee] py-5 flex justify-center items-center text-sm text-center">
-            <p className="text-[#6d6d6d]"><i className="fa-regular fa-copyright mr-1"></i>Copyright {date} | Orebi shopping | All Rights Reserved | Powered by <Link  className="text-[#545454] text-base" to={'https://github.com/tareqrad1'}>Tareq Radi</Link> </p>
+            <p className="text-[#6d6d6d]"><i className="fa-regular fa-copyright mr-1"></i>Copyright {date} | Orebi shopping | All Rights Reserved | Powered by <Link  className="text-[#545454] text-base" target="_blank" to={'https://github.com/tareqrad1'}>Tareq Radi</Link> </p>
         </div>
     </>
 )

@@ -6,7 +6,9 @@ import { useState } from "react";
 const ContactForm = () => {
     const [hide, setHide] = useState(false);
     const formik = useFormik({
-        
+
+        validateOnChange:true,
+        validateOnBlur:true,
         initialValues: {
             name: '',
             email: '',
@@ -21,23 +23,23 @@ const ContactForm = () => {
   return (
     <>
         <h1 className="text-3xl font-semibold mb-5">Fill up a Form</h1>
-        <form className={`md:w-[500px]  mb-5 space-y-4 ${hide ? 'hidden' : 'block'}`} onSubmit={formik.handleSubmit}>
+        <form className={`md:w-[500px]  mb-5 space-y-4 ${hide ? 'hidden' : 'block'}`} onSubmit={formik.handleSubmit} onBlur={formik.handleBlur}>
             <div>
-                <Input variant="standard" label="Name" value={formik.values.name} name="name" onChange={formik.handleChange}/>
+                <Input variant="standard" label="Name" value={formik.values.name} name="name" onChange={formik.handleChange} onBlur={formik.handleBlur}/>
                 <small className="text-[red]">{formik.errors.name}</small>
             </div>
             <div>
-                <Input variant="standard" label="Email" value={formik.values.email} name="email" onChange={formik.handleChange}/>
+                <Input variant="standard" label="Email" value={formik.values.email} name="email" onChange={formik.handleChange} onBlur={formik.handleBlur}/>
                 <small className="text-[red]">{formik.errors.email}</small>
             </div>
             <div>
-                <Textarea label="Message" name="message" value={formik.values.message} onChange={formik.handleChange}/>
+                <Textarea label="Message" name="message" value={formik.values.message} onChange={formik.handleChange} onBlur={formik.handleBlur}/>
                 <small className="text-[red]">{formik.errors.message}</small>
             </div>
-            <button type="submit" onClick={() => formik.isValid ? setHide(true) : setHide(false)} className={`px-10 py-2 bg-black text-white ${!formik.isValid ? 'text-[#ccc] cursor-no-drop' : 'text-white cursor-pointer'} `} disabled={!formik.isValid}>Post</button>
+            <button type="submit" onClick={() => formik.isValid ? setHide(true) : setHide(false)} className={`px-10 py-2 bg-black text-white ${!formik.isValid ? 'text-[#ccc] cursor-no-drop' : 'text-white cursor-pointer'} `} disabled={!formik.isValid} onChange={formik.handleChange}>Post</button>
         </form>
         {hide ? (
-            <AlertCustomStyles />
+            <AlertCustomStyles name={formik.values.name} />
         ) : (null)}
     </>
   )
