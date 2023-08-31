@@ -34,7 +34,7 @@ const ShopBy = () => {
         <div className="flex justify-between items-center max-w-full relative">
             <input type="text" placeholder="Search your product here" className="w-[700px] outline-none py-3 px-5 rounded-xl" onChange={ handleChange } />
             <i className="fa-solid fa-magnifying-glass absolute right-4 cursor-pointer text-xl"></i>
-            <div className={`bg-[#ffffff] w-[700px] space-y-4  absolute z-[10000] top-[51px] ${search.length === dataProduct.data.length && 'hidden'}`}>
+            <div className={`bg-[#ffffff] lg:w-[700px] space-y-4  absolute z-[10000] top-[51px] ${search.length === dataProduct.data.length && 'hidden'}`}>
                 {search.map((ele) => {
                 return (
                     (

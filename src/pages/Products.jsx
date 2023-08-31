@@ -19,7 +19,7 @@ const Products = () => {
             <BreadcrumbsWithIcon page='Product' />
             <div className="flex flex-col lg:flex-row gap-3 bg-[#efefef]">
                 <img src={view.image} alt="image" />
-                <div className="space-y-5 p-4">
+                <div className="space-y-5 p-4 overflow-x-hidden">
                     <h1 className="font-extrabold text-3xl">{view.name}</h1>
                     <h3 className="font-extrabold text-xl">{view.price}$</h3>
                     <p className="lg:w-[800px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt libero nulla pariatur exercitationem esse in, tenetur deleniti magni. Similique, facere doloribus laboriosam rerum repellat dignissimos neque! Esse autem eius facere?</p>
