@@ -6,7 +6,6 @@ import Bestsellers from "./Bestsellers";
 
 const Slider = () => {
     const value = useSelector((state) => state.data)
-    console.log('asd', value.data);
   return (
     <div className="py-[60px]">
         <Headings heading='All Products'/>

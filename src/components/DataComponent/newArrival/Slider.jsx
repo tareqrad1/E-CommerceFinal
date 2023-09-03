@@ -21,7 +21,6 @@ const Slider = () => {
       isMount.current = true;
     }
   }, [FetchApiData]);
-  console.log(value.data);
   return (
     <>
       <Headings heading="New Arrivals" />

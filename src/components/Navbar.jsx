@@ -71,10 +71,8 @@ export function NavbarSimple() {
  
   const handleWindowResize = () =>
     window.innerWidth >= 960 && setOpenNav(false);
- 
   React.useEffect(() => {
     window.addEventListener("resize", handleWindowResize);
- 
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };

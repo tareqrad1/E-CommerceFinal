@@ -8,6 +8,7 @@ import ShopBy from "../components/ShopBy"
 import Footer from "../components/Footer"
 import { Landing } from "../components/Landing"
 const Home = () => {
+  console.log('by Tareq Radi');
   return (
     <>
       <ShopBy />

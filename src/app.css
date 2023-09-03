@@ -67,3 +67,22 @@ ul li :not(.last)::before {
 button > svg {
     color: #7d8488;
 }
+
+/* card */
+.cardImage::after {
+    content: '';
+    position: absolute;
+    height: 0%;
+    width: 100%;
+    bottom: 0;
+    transition: 1s ease;
+}
+.cardImage:hover::after {
+    height: 20%;
+}
+.cardImage:hover > .btn {
+    display: block;
+    transition: 1s ease;
+    z-index: 10000000;
+    position: relative;
+}

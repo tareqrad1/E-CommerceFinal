@@ -13,7 +13,8 @@ const actionSlice = createSlice({
                 FindProduct.qwt += 1
             }else {
                 const Product = {...action.payload, qwt: 1}
-                state.products.push(Product)
+                state.products.push(Product);
+                localStorage.setItem('cart', JSON.stringify(state.products));
             }
         },
         removeFromCart: (state, action) => {
@@ -33,4 +34,4 @@ const actionSlice = createSlice({
     }
 })
 export default actionSlice.reducer;
-export const { addToCart, removeFromCart, clearCart, decreaseQuantity } = actionSlice.actions;
+export const { addToCart, removeFromCart, clearCart, decreaseQuantity, setCartFromLocalStorage } = actionSlice.actions;

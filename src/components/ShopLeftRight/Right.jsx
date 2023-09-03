@@ -1,75 +1,35 @@
+
 /* eslint-disable react/prop-types */
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
-import { useState } from "react";
-const Right = ({data}) => {
-  const [active, setActive] = useState(false);
-
+import { useDispatch } from 'react-redux'
+import { viewDetails } from '../../featchers/detailsSlice';
+import { useNavigate } from 'react-router-dom'
+import { addToCart } from '../../featchers/actionSlice';
+const Right = ({ele}) => {
+  const dispatch = useDispatch()
+  const Navigate = useNavigate()
+  function handleView() {
+    dispatch(viewDetails(ele))
+    Navigate('/product')
+  }
   return (
-    <div className="right w-full md:w-[70%]">
-      <div className="">
-      <Card className="card max-w-[24rem] overflow-hidden relative">
-        <CardHeader
-          floated={false}
-          shadow={false}
-          color="transparent"
-          className="m-0 rounded-none relative"
-        >
-          <img
-          className="w-full"
-            src={data.image}
-            alt={data.name}
-          />
-          <h1 className="bg-black text-white font-[500] px-4 py-1 w-fit ml-3 absolute left-1 top-4">New</h1>
-        </CardHeader>
-        <CardBody>
-          <div className="px-1 flex items-center justify-between">
-          <Typography variant="h4" color="blue-gray" className='text-[13px] lg:text-[17px]'>
-            {data.name}
-          </Typography>
-          <Typography variant="small" color="blue-gray">
-            <span className="font-bold ml-[1px]">$</span>
-          </Typography>
+    <div className="card cursor-pointer transition-[1s] bg-[#f5f5f3] relative">
+      <div className="cardImage relative -z-2">
+        <img src={ele.image} alt={ele.name} className="-z-1" />
+        <div className="btn hidden px-3">
+          <div className="flex justify-between transition-colors py-1">
+            <button className="text-[#707070]" onClick={handleView}><i className="fa-solid fa-eye"></i> View Details </button>
+            <button className="text-[#707070]" onClick={() => dispatch(addToCart(ele))}><i className="fa-solid fa-cart-plus"></i> Add to Cart</button>
           </div>
-          <Typography variant="small" color="gray" className="text-start mt-4 ml-[5px] mb-2">
-            {data.color}
-          </Typography>
-          <div>
-
-        {active ? (
-          <div className="flex items-center flex-col w-full space-y-2">
-            <Button
-              ripple={false}
-              fullWidth={true}
-              className="bg-blue-gray-900/10 text-blue-gray-900 text-xs shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-            >View to Cart
-            </Button>
-
-          <Button
-            ripple={false}
-            fullWidth={true}
-            className="text-xs bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-          >remove from cart
-          </Button>
-          </div>
-        ) : (
-          <Button
-          onClick={() =>setActive(true)}
-          ripple={false}
-          fullWidth={true}
-          className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-        >Add to Cart
-        </Button>
-        ) }
-          </div>
-        </CardBody>
-      </Card>
         </div>
+      </div>
+      {ele.new && <h1 className="bg-black text-white font-[500] px-4 py-1 w-fit ml-3 absolute left-1 top-4">New</h1>}
+      <div className="px-2 py-4 mt-4 border-[1px] border-[#e5e7eb] border-t-0">
+        <div className="flex justify-between items-center">
+          <h1 className="font-bold">{ele.name}</h1>
+          <p className="text-[#767676] text-[14px]">{ele.price}$</p>
+        </div>
+        <h4 className="text-[#767676] pt-3">{ele.color}</h4>
+      </div>
     </div>
   )
 }

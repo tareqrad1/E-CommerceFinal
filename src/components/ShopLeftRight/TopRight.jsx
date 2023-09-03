@@ -2,7 +2,7 @@ import { Select, Option } from "@material-tailwind/react";
 
 const TopRight = () => {
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center mb-6">
         <div className="space-x-2 cursor-pointer">
             <i className="fa-brands fa-buromobelexperte text-2xl"></i>
             <i className="fa-solid fa-list text-2xl"></i>

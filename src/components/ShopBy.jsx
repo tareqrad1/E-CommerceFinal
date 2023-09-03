@@ -9,18 +9,16 @@ const ShopBy = () => {
     const value = useSelector((state) => state.products)
     const dataProduct = useSelector((state) => state.data)
     const dispatch = useDispatch()
-    console.log('data is', dataProduct.data);
     const [search, setSearch] = useState([]);
 
     function handleChange(e) {
         const filter = dataProduct.data.filter((prod) => prod.name.toLowerCase().includes(e.target.value))
         setSearch(filter)
     }
-    console.log('search is :', search);
     useEffect(() => {
         setSearch(search)
     },[search])
-
+    
     function handleGo(ele) {
         Navigate('/product');
         dispatch(viewDetails(ele))

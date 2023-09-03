@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <>
       <ShopBy />
-      <div className="container py-14">
+      <div className="container py-14 bg-[#ffffff]">
         <div className="mb-10">
           <h1 className="text-[3rem] font-black">Contact</h1>
           <BreadcrumbsWithIcon page='Contact' />
