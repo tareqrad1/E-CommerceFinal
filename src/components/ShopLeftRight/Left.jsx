@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { selectContext } from "../../context/selectProvider";
 
 const Left = () => {
   const [hide, setHide] = useState(false);
+  const { setOpt, setColor } = useContext(selectContext);
   return (
     <>
       <div className="left hidden md:block px-1 py-4 space-y-3">
         <div>
           <h3 className="text-[20px] font-semibold">Shop by Category</h3>
           <ul className="space-y-2 px-1 py-2 cursor-pointer">
-            <li className="border-b-[1px] border-[#ccc] py-1 text-[#767676] hover:text-black hover:border-black transition-[1s]">
+            <li onClick={() => setOpt(true)} className="border-b-[1px] border-[#ccc] py-1 text-[#767676] hover:text-black hover:border-black transition-[1s]">
               New Arrivals
             </li>
             <li className="border-b-[1px] border-[#ccc] py-1 text-[#767676] hover:text-black hover:border-black transition-[1s]">
@@ -20,8 +22,8 @@ const Left = () => {
             <li className="border-b-[1px] border-[#ccc] py-1 text-[#767676] hover:text-black hover:border-black transition-[1s]">
               Electronics
             </li>
-            <li className="border-b-[1px] border-[#ccc] py-1 text-[#767676] hover:text-black hover:border-black transition-[1s]">
-              Others
+            <li onClick={() => setOpt(false)} className="border-b-[1px] border-[#ccc] py-1 text-[#767676] hover:text-black hover:border-black transition-[1s]">
+              All
             </li>
           </ul>
         </div>
