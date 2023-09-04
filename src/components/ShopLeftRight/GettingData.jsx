@@ -9,14 +9,12 @@ const GettingData = () => {
     const dispatch = useDispatch();
     const isMount = useRef(false);
     const { opt } = useContext(selectContext)
-    
-    console.log(opt);
     useEffect(() => {
         if(!isMount.current) {
             dispatch(FetchApiData());
             isMount.current = true;
         }
-    },[FetchApiData]);
+    },[]);
     return (
         <>
             {value.loading && (
