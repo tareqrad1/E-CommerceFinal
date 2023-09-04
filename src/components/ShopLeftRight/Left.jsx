@@ -3,7 +3,7 @@ import { selectContext } from "../../context/selectProvider";
 
 const Left = () => {
   const [hide, setHide] = useState(false);
-  const { setOpt, setColor } = useContext(selectContext);
+  const { setOpt } = useContext(selectContext);
   return (
     <>
       <div className="left hidden md:block px-1 py-4 space-y-3">

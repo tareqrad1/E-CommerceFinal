@@ -20,7 +20,7 @@ const Slider = () => {
       dispatch(FetchApiData());
       isMount.current = true;
     }
-  }, [FetchApiData]);
+  }, []);
   return (
     <>
       <Headings heading="New Arrivals" />
